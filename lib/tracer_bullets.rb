@@ -1,6 +1,6 @@
-require "tracer_bullet/version"
+require "tracer_bullets/version"
 
-module TracerBullet
+module TracerBullets
 
   module Methods
     def tracer_bullet
