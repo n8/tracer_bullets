@@ -20,7 +20,7 @@ On the Obama re-election campaign, I did a ton of performance engineering, and t
 
 I keep finding myself reinventing this same type of performance logging tool to solve performance bottlenecks in things I work on today, like **[Draft (an app to help people write better)](http://draftin.com)** 
  
-So here's a really simple version I made for everyone to use. It simply gives you a method to call:
+So here's a really simple version I made for everyone to use. It gives you a method to call:
 
 ```ruby
 tracer_bullet
@@ -68,7 +68,7 @@ Now if it was obviously a lot slower like 200ms, I might take a good look at wha
 
 ## Development Only
 
-These traces only run in Development mode. So you can leave them in your code if you really want to. I prefer to remove them, once I think I've got my problem solved.
+These traces only run in Development mode. So you can leave them in your code if you really want to. I prefer to remove them, once I've got my problem solved.
 
 
 Installation
