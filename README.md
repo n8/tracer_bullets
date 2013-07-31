@@ -78,7 +78,7 @@ Installation
 
 ```
 group :development do 
-gem 'tracer_bullet'
+gem 'tracer_bullets'
 end
 ```
 
