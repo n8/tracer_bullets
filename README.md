@@ -5,7 +5,7 @@ Tracer Bullets
 
 > [Wikipedia](http://en.wikipedia.org/wiki/Tracer_ammunition)
 
-Tracer Bullet is also an alter ego of Calvin in the comic strip Calvin and Hobbes. :)
+Tracer Bullet is also a private investigator, an alter ego of Calvin in the comic strip Calvin and Hobbes. :)
 
 -----------------------
 
@@ -74,7 +74,7 @@ These traces only run in Development mode. So you can leave them in your code if
 Installation
 ------------
 
-1) Add 'tracer_bullet' to your Gemfile. Probably best to just add it to your development group: 
+1) Add 'tracer_bullets' to your Gemfile. Probably best to just add it to your development group: 
 
 ```
 group :development do 
@@ -100,7 +100,6 @@ or view code:
 Feedback
 --------
 [Source code available on Github](https://github.com/n8/tracer_bullets). Feedback and pull requests are greatly appreciated.  Let me know if I can improve this.
-
 
 -----------
 
