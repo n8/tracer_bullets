@@ -3,7 +3,7 @@ Tracer Bullets
 
 > Tracer ammunition (tracers) are bullets or cannon caliber projectiles that are built with a small pyrotechnic charge in their base. Ignited by the burning powder, the pyrotechnic composition burns very brightly, making the projectile visible to the naked eye. This enables the shooter to follow the projectile trajectory to make aiming corrections.
 
-> Wikipedia (http://en.wikipedia.org/wiki/Tracer_ammunition)
+> [Wikipedia](http://en.wikipedia.org/wiki/Tracer_ammunition)
 
 Tracer Bullet is also an alter ego of Calvin in the comic strip Calvin and Hobbes. :)
 
