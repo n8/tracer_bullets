@@ -18,7 +18,7 @@ Performance tuning a Rails app is still pretty damn hard. There are great tools 
 
 On the Obama re-election campaign, I did a ton of performance engineering, and the tool that helped me out the most was simply something I built to add "tracer bullets" to my code. These bullets were just method calls to log the current location of the program and how much time had elapsed since the last time it was called. 
 
-I keep finding myself reinventing this same type of performance logging tool to solve performance bottlenecks in things I work on today, like **[Draft (an app to help people write better)](http://draftin.com)** 
+I keep finding myself reinventing this same type of performance logging tool to solve performance bottlenecks in things I work on today, like **[Draft](http://draftin.com) (an app to help people [write better](http://draftin.com))** 
  
 So here's a really simple version I made for everyone to use. It gives you a method to call:
 
@@ -104,4 +104,3 @@ Feedback
 -----------
 
 P.S. [**I'd love to meet you on Twitter: here**](http://twitter.com/natekontny). 
-
