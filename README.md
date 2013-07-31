@@ -1,21 +1,34 @@
-Tracer Bullet
+Tracer Bullets
 ===========
 
-> The idea of tracer bullets comes obviously from gunnery artillery. In the heavy artillery days, you would take your gun position, your target position, the wind, temperature, elevation, and other factors, and feed that into a firing table. You would get a solution that said to aim your gun at this angle and elevation, and fire. And you'd fire your gun and hope that your shell landed somewhere close to your target.
+> Tracer ammunition (tracers) are bullets or cannon caliber projectiles that are built with a small pyrotechnic charge in their base. Ignited by the burning powder, the pyrotechnic composition burns very brightly, making the projectile visible to the naked eye. This enables the shooter to follow the projectile trajectory to make aiming corrections.
 
-> An alternative to that approach is to use tracer bullets. If your target is moving, or if you don't know all the factors,you use tracer bullets—little phosphorous rounds intermixed with real rounds in your gun. As you fire, you can actually see the tracer bullets. And where they are landing is where the actual bullets are landing. If you're not quite on target—because you can see if you're not on target—you can adjust your position.
+> Wikipedia (http://en.wikipedia.org/wiki/Tracer_ammunition)
 
-> Dave Thomas, [Artima](http://www.artima.com/intv/tracer.html)
+Tracer Bullet is also an alter ego of Calvin in the comic strip Calvin and Hobbes. :)
 
-Tracer Bullets makes studying the performance of your Rails app from it's log file in development a lot easier. All it does is give you a method to call:
+-----------------------
+
+The *Tracer Bullets* gem makes studying the performance of your Rails app from its development log file a lot easier.
+
+
+## Background
+
+Performance tuning a Rails app is still pretty damn hard. There are great tools out there like New Relic, and even Rails own performance tests, but still, I find areas where I'm tearing my hair out looking for slow bits. 
+
+On the Obama re-election campaign, I did a ton of performance engineering, and the tool that helped me out the most was simply something I built to add "tracer bullets" to my code. These bullets were just method calls to log the current location of the program and how much time had elapsed since the last time it was called. 
+
+I keep finding myself reinventing this same type of performance logging tool to solve performance bottlenecks in things I work on today, like **[Draft (an app to help people write better)](http://draftin.com)** 
+ 
+So here's a really simple version I made for everyone to use. It simply gives you a method to call:
 
 ```ruby
 tracer_bullet
 ```
 
-in your controllers and views. When you request an action from your Rails app, that method will log the elapsed time since the last time it was called as well as it's location in your Controller or View. 
+in your controllers and views. When you request an action from your Rails app, that method will log the elapsed time since the last time it was called as well as its location in your controller or view. 
 
-Sprinkle them around and it's a lot easier to narrow your focus on the slow parts of the request.
+As you intermix them with your code, you'll notice it becomes a lot easier to narrow your focus on the slow parts of the request.
 
 ## Syntax
 
@@ -31,15 +44,15 @@ In a view, call it with:
 <%= tracer_bullet %>
 ```
 
-You can also use the alias: 
+To save keystrokes, you can also use the alias: 
 
 ```ruby
 tb
 ```
 
-if you want to save the keystrokes. 
+## Example Log
 
-The output in your development.log file will now have these: 
+The output of your development.log file will look like: 
 
 ```
 Elapsed: 4.505ms /Users/nate/git/afternoon/app/views/documents/edit.html.erb:482
@@ -53,25 +66,25 @@ Letting you know that between line 482 of my edit.html.erb file and line 539, 7m
 
 Now if it was obviously a lot slower like 200ms, I might take a good look at what's happening in that block of code. 
 
-## Background
+## Development Only
 
-Performance tuning a Rails app is still pretty damn hard. There's great tools out there like New Relic, and even Rails own performance tests, but still I find areas where I'm still tearing my hair out looking for the slow bits. 
+These traces only run in Development mode. So you can leave them in your code if you really want to. I prefer to remove them, once I think I've got my problem solved.
 
-On the Obama re-election campaign, I did a ton of performance engineering, and the tool that helped me out the most was simply something I built to add "tracer bullets" to my code. These bullets were just method calls to log the current location of the program and how much time had elapsed since the last time it was called. 
-
-I keep finding myself reinventing this same type of performance logging tool to solve performance bottlenecks in things I work on today, like **[Draft (an app to help people write better)](http://draftin.com)** 
-
-These aren't the same "tracer bullets" that Dave was referring to above, but I like the metaphor just the same. 
-
-So here's a really simple version I made for everyone to use. 
 
 Installation
 ------------
 
-1. Add `gem 'tracer_bullet'` to your Gemfile.
-2. Run `bundle install`.
-3. Restart your server
-4. Call the tracer_bullet method in your actions:
+1) Add 'tracer_bullet' to your Gemfile. Probably best to just add it to your development group: 
+
+```
+group :development do 
+gem 'tracer_bullet'
+end
+```
+
+2) Run `bundle install`.
+3) Restart your server
+4) Call the tracer_bullet method in your actions:
 
 ```ruby
 tracer_bullet
@@ -86,6 +99,4 @@ or view code:
 
 Feedback
 --------
-[Source code available on Github](https://github.com/n8/tracer_bullet). Feedback and pull requests are greatly appreciated.  Let me know if I can improve this.
-
-
+[Source code available on Github](https://github.com/n8/tracer_bullets). Feedback and pull requests are greatly appreciated.  Let me know if I can improve this.
