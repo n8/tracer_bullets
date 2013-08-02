@@ -5,11 +5,22 @@ module TracerBullets
   module Methods
     def tracer_bullet
       if Rails.env.development?
-        Rails.logger.debug( "Elapsed: #{((Time.now - @tracer_bullet_start_time)*1000).to_i}ms #{caller(0)[1]}" ) 
+        _tracer_bullets_log( "Elapsed: #{((Time.now - @tracer_bullet_start_time)*1000).to_i}ms #{caller(0)[1]}" )
         @tracer_bullet_start_time = Time.now
       end
     end
     alias_method :tb, :tracer_bullet
+
+    private
+
+    def _tracer_bullets_log(msg)
+      log = Rails.logger
+      if defined?(ActiveSupport::TaggedLogging)
+        log.tagged("TracerBullets") { |l| l.debug(msg) }
+      else
+        log.debug(msg)
+      end
+    end
   end
 
   module Controller
