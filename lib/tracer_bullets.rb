@@ -25,26 +25,22 @@ module TracerBullets
 
   module Controller
     extend ActiveSupport::Concern
+    include Methods
 
     included do
       before_filter :setup_tracer_bullet_start_time
     end
 
-    module InstanceMethods
-      include Methods
-
-      def setup_tracer_bullet_start_time
-        @tracer_bullet_start_time = Time.now
-      end
+    def setup_tracer_bullet_start_time
+      @tracer_bullet_start_time = Time.now
     end
+
   end
 
   module View
     extend ActiveSupport::Concern
-
-    module InstanceMethods
-      include Methods
-    end
+    include Methods
+  
   end
 
 
